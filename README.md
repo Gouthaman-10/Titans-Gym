@@ -29,6 +29,17 @@ This project was created to showcase strong front-end development skills, focusi
 Perfect for portfolios, web design practice, or as a base template for real-world gym and fitness business websites.
 
 ---
+## 📸 Demo / Priview
+
+<img width="1856" height="889" alt="Screenshot 2025-11-13 013336" src="https://github.com/user-attachments/assets/3ba6321f-5999-4c0e-bb7e-e095154450a3" />
+
+<img width="1851" height="881" alt="Screenshot 2025-11-13 013406" src="https://github.com/user-attachments/assets/450ef467-c114-4d99-9187-63583cdc93ba" />
+
+<img width="1827" height="897" alt="Screenshot 2025-11-13 013435" src="https://github.com/user-attachments/assets/9bfe3861-9e39-41ed-8ed5-bacacddf1a2b" />
+
+<img width="1842" height="893" alt="Screenshot 2025-11-13 013501" src="https://github.com/user-attachments/assets/8b8728f7-629c-4ce5-8153-f8ecdea86a88" />
+
+---
 
 ## 💻 Developer
 **Developed by:** Gouthaman M  
