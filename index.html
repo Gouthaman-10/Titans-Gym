@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>TITANS - GYM</title>
+</head>
+
+<body class="bg-[var(--primary-color)] text-[var(--white)] font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-glass">
+        <div class="max-w-[1200px] mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="nav__logo">
+                <a href="#"><img src="./IMG/GYM_LOGO_-1.png" alt="logo" class="max-w-[60px]" /></a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center gap-4">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+
+            <ul class="nav__links hidden md:flex list-none items-center gap-8">
+                <li class="link"><a href="#home"
+                        class="text-[var(--white)] relative pb-3 hover:text-[var(--secondary-color)] transition-colors">Home</a>
+                </li>
+                <li class="link"><a href="#program"
+                        class="text-[var(--white)] relative pb-3 hover:text-[var(--secondary-color)] transition-colors">Program</a>
+                </li>
+                <li class="link"><a href="#service"
+                        class="text-[var(--white)] relative pb-3 hover:text-[var(--secondary-color)] transition-colors">Service</a>
+                </li>
+                <li class="link"><a href="#about"
+                        class="text-[var(--white)] relative pb-3 hover:text-[var(--secondary-color)] transition-colors">About</a>
+                </li>
+                <li class="link"><a href="#community"
+                        class="text-[var(--white)] relative pb-3 hover:text-[var(--secondary-color)] transition-colors">Community</a>
+                </li>
+                <li class="link"><a href="#contact"
+                        class="text-[var(--white)] relative pb-3 hover:text-[var(--secondary-color)] transition-colors">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="mobile-menu absolute top-16 left-0 w-full bg-[var(--primary-color-light)] hidden md:hidden z-50">
+                <ul class="flex flex-col items-center py-4">
+                    <li class="py-3"><a href="#home"
+                            class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors">Home</a>
+                    </li>
+                    <li class="py-3"><a href="#program"
+                            class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors">Program</a>
+                    </li>
+                    <li class="py-3"><a href="#service"
+                            class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors">Service</a>
+                    </li>
+                    <li class="py-3"><a href="#about"
+                            class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors">About</a>
+                    </li>
+                    <li class="py-3"><a href="#community"
+                            class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors">Community</a>
+                    </li>
+                    <li class="py-3"><a href="#contact"
+                            class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors">Contact</a>
+                    </li>
+                    <li class="py-3"><button
+                            class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-6 py-0.5 rounded hover:bg-[var(--secondary-color-dark)] transition-colors"
+                            onclick="openJoinForm()">Join Now</button></li>
+                </ul>
+            </div>
+
+            <button
+                class="btn hidden md:block bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors"
+                onclick="openJoinForm()">Join Now</button>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="page-section pt-20 mb-16">
+        <div class="max-w-[1200px] mx-auto px-4 pt-8 relative grid md:grid-cols-2 gap-8 items-center header__container">
+            <span class="bg__blur"></span>
+            <span class="bg__blur header__blur bottom-20 right-0"></span>
+
+            <div class="header__content order-2 md:order-1">
+                <h4 class="text-[var(--secondary-color)] text-lg font-semibold mb-4">BEST FITNESS IN THE TOWN</h4>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight"><span
+                        class="text-transparent [-webkit-text-stroke:1px_var(--white)]">MAKE</span> YOUR BODY <span
+                        class="text-transparent [-webkit-text-stroke:1px_var(--white)]">SHAPE</span></h1>
+
+                <!-- Image below the text on mobile -->
+                <div class="header-content-image md:hidden">
+                    <img src="./IMG/GYM_IMAGE1.png" alt="Fitness" />
+                </div>
+
+                <p class="text-[var(--text-light)] mb-8">
+                    Unleash your potential and embark on a journey towards a stronger,
+                    fitter, and more confident you. Sign up for 'Make Your Body Shape' now
+                    and witness the incredible transformation your body is capable of!
+                </p>
+                <button
+                    class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors"
+                    onclick="openDemoForm()">Get Started</button>
+            </div>
+
+            <div class="header__image order-1 md:order-2 relative hidden md:block">
+                <img src="./IMG/GYM_IMAGE1.png" alt="header" class="max-w-[350px] mx-auto" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Toggle Section (320px to 768px) -->
+    <div id="mobile-toggle-section" class="max-w-[1200px] mx-auto px-4">
+        <div class="toggle-section">
+            <div class="toggle-header" onclick="toggleContent('mobile-toggle-content')">
+                <h3 class="text-lg font-semibold">Special Mobile Offers</h3>
+                <i class="ri-arrow-down-s-line toggle-icon text-xl" id="mobile-toggle-icon"></i>
+            </div>
+            <div class="toggle-content" id="mobile-toggle-content">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-[var(--primary-color-extra-light)] p-4 rounded-lg text-center">
+                        <i class="ri-timer-flash-line text-2xl text-[var(--secondary-color)] mb-2"></i>
+                        <h4 class="font-semibold">Quick Start</h4>
+                        <p class="text-sm text-[var(--text-light)]">15-min sessions</p>
+                    </div>
+                    <div class="bg-[var(--primary-color-extra-light)] p-4 rounded-lg text-center">
+                        <i class="ri-user-heart-line text-2xl text-[var(--secondary-color)] mb-2"></i>
+                        <h4 class="font-semibold">Personal Training</h4>
+                        <p class="text-sm text-[var(--text-light)]">Mobile exclusive</p>
+                    </div>
+                    <div class="bg-[var(--primary-color-extra-light)] p-4 rounded-lg text-center">
+                        <i class="ri-home-smile-line text-2xl text-[var(--secondary-color)] mb-2"></i>
+                        <h4 class="font-semibold">Home Workouts</h4>
+                        <p class="text-sm text-[var(--text-light)]">No equipment needed</p>
+                    </div>
+                    <div class="bg-[var(--primary-color-extra-light)] p-4 rounded-lg text-center">
+                        <i class="ri-calendar-check-line text-2xl text-[var(--secondary-color)] mb-2"></i>
+                        <h4 class="font-semibold">Flexible Schedule</h4>
+                        <p class="text-sm text-[var(--text-light)]">Book anytime</p>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button
+                        class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-6 py-2 rounded hover:bg-[var(--secondary-color-dark)] transition-colors"
+                        onclick="openJoinForm()">Get Mobile Offer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Program Section -->
+    <section id="program" class="page-section bg-[var(--primary-color-light)]">
+        <div class="max-w-[1200px] mx-auto px-4 py-20">
+            <div class="explore__header flex flex-col md:flex-row justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-semibold text-center mb-4 md:mb-0">EXPLORE OUR PROGRAM</h2>
+                <div class="explore__nav flex gap-4">
+                    <span
+                        class="explore-prev border-2 border-[var(--white)] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:border-[var(--secondary-color)] hover:text-[var(--secondary-color)] transition-colors"><i
+                            class="ri-arrow-left-line"></i></span>
+                    <span
+                        class="explore-next border-2 border-[var(--white)] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:border-[var(--secondary-color)] hover:text-[var(--secondary-color)] transition-colors"><i
+                            class="ri-arrow-right-line"></i></span>
+                </div>
+            </div>
+
+            <div class="explore__grid mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="explore__card p-4 bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                    <span
+                        class="inline-block p-2 mb-4 text-xl text-[var(--primary-color)] bg-[var(--secondary-color-dark)] rounded"><i
+                            class="ri-boxing-fill"></i></span>
+                    <h4 class="text-xl font-semibold mb-2">Strength</h4>
+                    <p class="text-[var(--text-light)] mb-4">
+                        Embrace the essence of strength as we delve into its various
+                        dimensions physical, mental, and emotional.
+                    </p>
+                    <a href="#" class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors"
+                        onclick="openJoinForm()">Join Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div
+                    class="explore__card p-4 bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                    <span
+                        class="inline-block p-2 mb-4 text-xl text-[var(--primary-color)] bg-[var(--secondary-color-dark)] rounded"><i
+                            class="ri-heart-pulse-fill"></i></span>
+                    <h4 class="text-xl font-semibold mb-2">Physical Fitness</h4>
+                    <p class="text-[var(--text-light)] mb-4">
+                        It encompasses a range of activities that improve health, strength,
+                        flexibility, and overall well-being.
+                    </p>
+                    <a href="#" class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors"
+                        onclick="openJoinForm()">Join Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div
+                    class="explore__card p-4 bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                    <span
+                        class="inline-block p-2 mb-4 text-xl text-[var(--primary-color)] bg-[var(--secondary-color-dark)] rounded"><i
+                            class="ri-run-line"></i></span>
+                    <h4 class="text-xl font-semibold mb-2">Fat Lose</h4>
+                    <p class="text-[var(--text-light)] mb-4">
+                        Through a combination of workout routines and expert guidance, we'll
+                        empower you to reach your goals.
+                    </p>
+                    <a href="#" class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors"
+                        onclick="openJoinForm()">Join Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+
+                <div
+                    class="explore__card p-4 bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                    <span
+                        class="inline-block p-2 mb-4 text-xl text-[var(--primary-color)] bg-[var(--secondary-color-dark)] rounded"><i
+                            class="ri-shopping-basket-fill"></i></span>
+                    <h4 class="text-xl font-semibold mb-2">Weight Gain</h4>
+                    <p class="text-[var(--text-light)] mb-4">
+                        Designed for individuals, our program offers an effective approach
+                        to gaining weight in a sustainable manner.
+                    </p>
+                    <a href="#" class="text-[var(--white)] hover:text-[var(--secondary-color)] transition-colors"
+                        onclick="openJoinForm()">Join Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service" class="page-section">
+        <div class="max-w-[1200px] mx-auto px-4 py-20 grid md:grid-cols-2 gap-8">
+            <div class="class__image relative min-h-[500px]">
+                <span class="bg__blur"></span>
+                <img src="./IMG/class-1.jpg" alt="class"
+                    class="class__img-1 absolute right-0 top-0 max-w-[500px] rounded-xl" />
+                <img src="./IMG/class-2.jpg" alt="class"
+                    class="class__img-2 absolute left-0 bottom-0 max-w-[300px] rounded-xl" />
+            </div>
+
+            <div class="class__content py-8">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-left">THE CLASS YOU WILL GET HERE</h2>
+                <p class="text-[var(--text-light)] mb-8">
+                    Led by our team of expert and motivational instructors, "The Class You
+                    Will Get Here" is a high-energy, results-driven session that combines
+                    a perfect blend of cardio, strength training, and functional
+                    exercises. Each class is carefully curated to keep you engaged and
+                    challenged, ensuring you never hit a plateau in your fitness
+                    endeavors.
+                </p>
+                <button
+                    class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors"
+                    onclick="openBookClassForm()">Book A Class</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="page-section bg-[var(--primary-color-light)]">
+        <div class="max-w-[1200px] mx-auto px-4 py-20">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center mb-8">ABOUT OUR GYM</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-[var(--text-light)] mb-6">
+                        Founded in 2010, TITANS Gym has been at the forefront of fitness innovation, helping thousands
+                        of members
+                        achieve their health and wellness goals. Our state-of-the-art facility spans over 10,000 square
+                        feet and is
+                        equipped with the latest fitness technology.
+                    </p>
+                    <p class="text-[var(--text-light)] mb-6">
+                        Our team of certified trainers and nutritionists are dedicated to providing personalized
+                        guidance to help
+                        you on your fitness journey. We believe in a holistic approach to health that combines physical
+                        training,
+                        proper nutrition, and mental wellness.
+                    </p>
+                    <p class="text-[var(--text-light)]">
+                        At TITANS Gym, we're more than just a fitness center - we're a community of like-minded
+                        individuals
+                        supporting each other to become the best versions of ourselves.
+                    </p>
+                </div>
+                <div class="relative">
+                    <img src="./IMG/GYM_IMAGE_5.jpg" alt="About our gym" class="rounded-xl" />
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-[var(--secondary-color)] text-[var(--primary-color)] p-6 rounded-xl">
+                        <h3 class="text-xl font-bold">10+ Years</h3>
+                        <p>Of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="page-section">
+        <div class="max-w-[1200px] mx-auto px-4 py-20">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center mb-8">OUR COMMUNITY</h2>
+            <p class="text-[var(--text-light)] text-center max-w-[800px] mx-auto mb-12">
+                Join our vibrant community of fitness enthusiasts who support, motivate, and inspire each other every
+                day. We
+                host regular events, challenges, and social gatherings to keep our community connected.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-[var(--primary-color-light)] p-6 rounded-xl text-center">
+                    <div
+                        class="w-20 h-20 mx-auto bg-[var(--secondary-color)] rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-team-line text-3xl text-[var(--primary-color)]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Weekly Challenges</h3>
+                    <p class="text-[var(--text-light)]">Participate in fun weekly fitness challenges with prizes for
+                        winners.</p>
+                </div>
+
+                <div class="bg-[var(--primary-color-light)] p-6 rounded-xl text-center">
+                    <div
+                        class="w-20 h-20 mx-auto bg-[var(--secondary-color)] rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-calendar-event-line text-3xl text-[var(--primary-color)]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Social Events</h3>
+                    <p class="text-[var(--text-light)]">Join our monthly social events to connect with fellow members.
+                    </p>
+                </div>
+
+                <div class="bg-[var(--primary-color-light)] p-6 rounded-xl text-center">
+                    <div
+                        class="w-20 h-20 mx-auto bg-[var(--secondary-color)] rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-trophy-line text-3xl text-[var(--primary-color)]"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Achievement Recognition</h3>
+                    <p class="text-[var(--text-light)]">We celebrate member milestones and achievements together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="max-w-[1200px] mx-auto px-4 py-20">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-4">OUR PRICING PLAN</h2>
+        <p class="text-[var(--text-light)] text-center max-w-[600px] mx-auto mb-8">
+            Our pricing plan comes with various membership tiers, each tailored to
+            cater to different preferences and fitness aspirations.
+        </p>
+
+        <div class="price__grid mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                class="price__card p-8 flex flex-col bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                <div class="price__card__content flex-1 mb-8">
+                    <h4 class="text-xl font-medium mb-4">Basic Plan</h4>
+                    <h3 class="text-3xl font-semibold pb-4 mb-8 border-b-2 border-[var(--white)]">$500</h3>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        Smart workout plan
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        At home workouts
+                    </p>
+                </div>
+                <button
+                    class="price__btn text-[var(--secondary-color)] bg-transparent border-2 border-[var(--secondary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] transition-colors"
+                    onclick="openPricingForm('Basic Plan')">Join Now</button>
+            </div>
+
+            <div
+                class="price__card p-8 flex flex-col bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                <div class="price__card__content flex-1 mb-8">
+                    <h4 class="text-xl font-medium mb-4">Weekly Plan</h4>
+                    <h3 class="text-3xl font-semibold pb-4 mb-8 border-b-2 border-[var(--white)]">$700</h3>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        PRO Gyms
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        Smart workout plan
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        At home workouts
+                    </p>
+                </div>
+                <button
+                    class="price__btn text-[var(--secondary-color)] bg-transparent border-2 border-[var(--secondary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] transition-colors"
+                    onclick="openPricingForm('Weekly Plan')">Join Now</button>
+            </div>
+
+            <div
+                class="price__card p-8 flex flex-col bg-[var(--primary-color-light)] border-2 border-transparent rounded-xl hover:bg-[var(--primary-color-extra-light)] hover:border-[var(--secondary-color)]">
+                <div class="price__card__content flex-1 mb-8">
+                    <h4 class="text-xl font-medium mb-4">Monthly Plan</h4>
+                    <h3 class="text-3xl font-semibold pb-4 mb-8 border-b-2 border-[var(--white)]">$1000</h3>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        ELITE Gyms & Classes
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        PRO Gyms
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        Smart workout plan
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        At home workouts
+                    </p>
+                    <p class="text-[var(--white)] mb-3 flex items-center">
+                        <i class="ri-checkbox-circle-line text-[var(--secondary-color)] mr-2"></i>
+                        Personal Training
+                    </p>
+                </div>
+                <button
+                    class="price__btn text-[var(--secondary-color)] bg-transparent border-2 border-[var(--secondary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] transition-colors"
+                    onclick="openPricingForm('Monthly Plan')">Join Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section class="review bg-[var(--primary-color-light)] py-20">
+        <div class="max-w-[1200px] mx-auto px-4 flex flex-col md:flex-row gap-8">
+            <span><i class="ri-double-quotes-r"></i></span>
+
+            <div class="review__content flex-1">
+                <h4 class="text-xl font-semibold mb-4">MEMBER REVIEW</h4>
+                <p class="text-[var(--text-light)] mb-8 max-w-[800px]">
+                    What truly sets this gym apart is their expert team of trainers. The
+                    trainers are knowledgeable, approachable, and genuinely invested in
+                    helping members achieve their fitness goals. They take the time to
+                    understand individual needs and create personalized workout plans,
+                    ensuring maximum results and safety.
+                </p>
+
+                <div class="review__rating mb-8">
+                    <span class="text-[var(--secondary-color)] text-xl"><i class="ri-star-fill"></i></span>
+                    <span class="text-[var(--secondary-color)] text-xl"><i class="ri-star-fill"></i></span>
+                    <span class="text-[var(--secondary-color)] text-xl"><i class="ri-star-fill"></i></span>
+                    <span class="text-[var(--secondary-color)] text-xl"><i class="ri-star-fill"></i></span>
+                    <span class="text-[var(--secondary-color)] text-xl"><i class="ri-star-half-fill"></i></span>
+                </div>
+
+                <div class="review__footer mt-16 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="review__member flex items-start gap-4">
+                        <img src="./IMG/REVIEW_IMAGE_1.jpg" alt="member" class="max-w-[60px] rounded-full" />
+                        <div class="review__member__details">
+                            <h4 class="text-xl font-semibold">KARTHI K</h4>
+                            <p class="text-[var(--text-light)]">Fullstack Developer</p>
+                        </div>
+                    </div>
+
+                    <div class="review__nav flex items-center gap-8">
+                        <span class="text-2xl text-[var(--secondary-color)] cursor-pointer"><i
+                                class="ri-arrow-left-line"></i></span>
+                        <span class="text-2xl text-[var(--secondary-color)] cursor-pointer"><i
+                                class="ri-arrow-right-line"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section bg-[var(--primary-color-light)]">
+        <div class="max-w-[1200px] mx-auto px-4 py-20">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center mb-8">CONTACT US</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-[var(--secondary-color)] rounded-full flex items-center justify-center mt-1">
+                                <i class="ri-map-pin-line text-xl text-[var(--primary-color)]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Our Location</h4>
+                                <p class="text-[var(--text-light)]">123 Fitness Street, Gym City, FC 12345</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-[var(--secondary-color)] rounded-full flex items-center justify-center mt-1">
+                                <i class="ri-phone-line text-xl text-[var(--primary-color)]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Phone Number</h4>
+                                <p class="text-[var(--text-light)]">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-[var(--secondary-color)] rounded-full flex items-center justify-center mt-1">
+                                <i class="ri-mail-line text-xl text-[var(--primary-color)]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Email Address</h4>
+                                <p class="text-[var(--text-light)]">info@titansgym.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-[var(--text-light)]">Monday - Friday</span>
+                                <span class="text-[var(--white)]">5:00 AM - 11:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-[var(--text-light)]">Saturday</span>
+                                <span class="text-[var(--white)]">6:00 AM - 10:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-[var(--text-light)]">Sunday</span>
+                                <span class="text-[var(--white)]">7:00 AM - 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-[var(--text-light)] mb-2">Your Name</label>
+                                <input type="text" id="name"
+                                    class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-[var(--text-light)] mb-2">Your Email</label>
+                                <input type="email" id="email"
+                                    class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-[var(--text-light)] mb-2">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-[var(--text-light)] mb-2">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors w-full">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d0f12] py-12">
+        <div class="max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="footer__col">
+                <div class="footer__logo"><img src="./IMG/GYM_LOGO_-1.png" alt="logo" class="max-w-[80px] mb-8" /></div>
+                <p class="text-[#d1d5db] mb-8">
+                    Take the first step towards a healthier, stronger you with our
+                    unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+                </p>
+                <div class="footer__socials flex items-center gap-4">
+                    <a href="#"
+                        class="p-2 text-lg text-[var(--secondary-color)] border border-[var(--secondary-color)] rounded-full hover:bg-[var(--secondary-color)] hover:text-white transition-colors"><i
+                            class="ri-facebook-fill"></i></a>
+                    <a href="#"
+                        class="p-2 text-lg text-[var(--secondary-color)] border border-[var(--secondary-color)] rounded-full hover:bg-[var(--secondary-color)] hover:text-white transition-colors"><i
+                            class="ri-instagram-line"></i></a>
+                    <a href="#"
+                        class="p-2 text-lg text-[var(--secondary-color)] border border-[var(--secondary-color)] rounded-full hover:bg-[var(--secondary-color)] hover:text-white transition-colors"><i
+                            class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="text-xl font-medium mb-8">Company</h4>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Business</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Franchise</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Partnership</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Network</a>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="text-xl font-medium mb-8">About Us</h4>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Blogs</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Security</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Careers</a>
+            </div>
+
+            <div class="footer__col">
+                <h4 class="text-xl font-medium mb-8">Contact</h4>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Contact
+                    Us</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Privacy
+                    Policy</a>
+                <a href="#"
+                    class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">Terms &
+                    Conditions</a>
+                <a href="#" class="block text-[#d1d5db] mb-4 hover:text-[var(--secondary-color)] transition-colors">BMI
+                    Calculator</a>
+            </div>
+        </div>
+
+        <div class="max-w-[1200px] mx-auto px-4 pt-8 mt-8 border-t border-[#35373b] text-center text-sm text-[#d1d5db]">
+            Copyright © All rights Reserved by @ TITANS GYM
+        </div>
+    </footer>
+
+    <!-- Modal Forms -->
+    <!-- Free Demo Session Form -->
+    <div id="demoForm" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-[var(--primary-color-light)] rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Free 15-Day Demo Session</h3>
+                <button onclick="closeDemoForm()"
+                    class="text-2xl hover:text-[var(--secondary-color)] transition-colors">&times;</button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label for="demo-name" class="block text-[var(--text-light)] mb-2">Full Name</label>
+                    <input type="text" id="demo-name"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="demo-email" class="block text-[var(--text-light)] mb-2">Email Address</label>
+                    <input type="email" id="demo-email"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="demo-phone" class="block text-[var(--text-light)] mb-2">Phone Number</label>
+                    <input type="tel" id="demo-phone"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="demo-goals" class="block text-[var(--text-light)] mb-2">Fitness Goals</label>
+                    <select id="demo-goals"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                        <option value="">Select your goal</option>
+                        <option value="weight-loss">Weight Loss</option>
+                        <option value="muscle-gain">Muscle Gain</option>
+                        <option value="strength">Strength Training</option>
+                        <option value="endurance">Endurance</option>
+                        <option value="general">General Fitness</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors w-full">Register
+                    for Free Demo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Join Now Form -->
+    <div id="joinForm" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-[var(--primary-color-light)] rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Join Our Gym</h3>
+                <button onclick="closeJoinForm()"
+                    class="text-2xl hover:text-[var(--secondary-color)] transition-colors">&times;</button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label for="join-name" class="block text-[var(--text-light)] mb-2">Full Name</label>
+                    <input type="text" id="join-name"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="join-email" class="block text-[var(--text-light)] mb-2">Email Address</label>
+                    <input type="email" id="join-email"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="join-phone" class="block text-[var(--text-light)] mb-2">Phone Number</label>
+                    <input type="tel" id="join-phone"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="join-plan" class="block text-[var(--text-light)] mb-2">Membership Plan</label>
+                    <select id="join-plan"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                        <option value="">Select a plan</option>
+                        <option value="basic">Basic Plan - $500</option>
+                        <option value="weekly">Weekly Plan - $700</option>
+                        <option value="monthly">Monthly Plan - $1000</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors w-full">Join
+                    Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pricing Join Form -->
+    <div id="pricingForm" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-[var(--primary-color-light)] rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Join <span id="selected-plan"></span></h3>
+                <button onclick="closePricingForm()"
+                    class="text-2xl hover:text-[var(--secondary-color)] transition-colors">&times;</button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label for="pricing-name" class="block text-[var(--text-light)] mb-2">Full Name</label>
+                    <input type="text" id="pricing-name"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="pricing-email" class="block text-[var(--text-light)] mb-2">Email Address</label>
+                    <input type="email" id="pricing-email"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="pricing-phone" class="block text-[var(--text-light)] mb-2">Phone Number</label>
+                    <input type="tel" id="pricing-phone"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="pricing-payment" class="block text-[var(--text-light)] mb-2">Payment Method</label>
+                    <select id="pricing-payment"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                        <option value="">Select payment method</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors w-full">Complete
+                    Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Book Class Form -->
+    <div id="bookClassForm" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-[var(--primary-color-light)] rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold">Book a Class</h3>
+                <button onclick="closeBookClassForm()"
+                    class="text-2xl hover:text-[var(--secondary-color)] transition-colors">&times;</button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label for="class-name" class="block text-[var(--text-light)] mb-2">Full Name</label>
+                    <input type="text" id="class-name"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="class-email" class="block text-[var(--text-light)] mb-2">Email Address</label>
+                    <input type="email" id="class-email"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="class-type" class="block text-[var(--text-light)] mb-2">Class Type</label>
+                    <select id="class-type"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                        <option value="">Select class type</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="strength">Strength Training</option>
+                        <option value="hiit">HIIT</option>
+                        <option value="pilates">Pilates</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="class-date" class="block text-[var(--text-light)] mb-2">Preferred Date</label>
+                    <input type="date" id="class-date"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                </div>
+                <div>
+                    <label for="class-time" class="block text-[var(--text-light)] mb-2">Preferred Time</label>
+                    <select id="class-time"
+                        class="w-full bg-[var(--primary-color)] border border-[var(--primary-color-extra-light)] rounded-lg px-4 py-3 text-[var(--white)] focus:outline-none focus:border-[var(--secondary-color)]">
+                        <option value="">Select time</option>
+                        <option value="morning">Morning (6:00 AM - 9:00 AM)</option>
+                        <option value="afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                        <option value="evening">Evening (5:00 PM - 8:00 PM)</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="bg-[var(--secondary-color)] text-[var(--primary-color)] px-8 py-3 rounded hover:bg-[var(--secondary-color-dark)] transition-colors w-full">Book
+                    Class</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

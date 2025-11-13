@@ -1,0 +1,345 @@
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+    :root {
+        --primary-color: #111317;
+        --primary-color-light: #1f2125;
+        --primary-color-extra-light: #35373b;
+        --secondary-color: #f35b09;
+        --secondary-color-dark: #e96e10;
+        --text-light: #d1d5db;
+        --white: #ffffff;
+        --max-width: 1200px;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--primary-color);
+        color: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    .bg__blur {
+        position: absolute;
+        box-shadow: 0 0 1000px 50px var(--secondary-color);
+        z-index: -1;
+    }
+
+    .header__container {
+        position: relative;
+    }
+
+    .header__container::before {
+        content: "FITNESS";
+        position: absolute;
+        bottom: -5rem;
+        right: 1rem;
+        font-size: 10rem;
+        font-weight: 700;
+        line-height: 7rem;
+        color: var(--white);
+        opacity: 0.05;
+        z-index: -1;
+    }
+
+    .header__image::before {
+        content: "o";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 40rem;
+        font-weight: 400;
+        line-height: 20rem;
+        color: var(--secondary-color);
+        opacity: 0.1;
+        z-index: -1;
+    }
+
+    .mobile-menu {
+        transition: all 0.3s ease;
+    }
+
+    .explore__card,
+    .price__card {
+        transition: all 0.3s ease;
+    }
+
+    .review__container>span {
+        font-size: 6rem;
+        color: var(--secondary-color);
+        opacity: 0.5;
+    }
+
+    .nav-glass {
+        background: rgba(17, 19, 23, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .page-section {
+        min-height: 80vh;
+        padding: 5rem 1rem;
+    }
+
+    .toggle-section {
+        background-color: var(--primary-color-light);
+        border-radius: 10px;
+        margin: 1rem 0;
+        overflow: hidden;
+    }
+
+    .toggle-header {
+        padding: 1rem;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .toggle-content {
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .toggle-content.active {
+        padding: 1rem;
+        max-height: 500px;
+    }
+
+    /* Mobile First Approach - 320px to 768px */
+    @media (max-width: 768px) {
+        .header__container::before {
+            font-size: 3rem;
+            line-height: 2.5rem;
+            bottom: 1rem;
+            right: 0.5rem;
+        }
+
+        .header__image::before {
+            font-size: 15rem;
+            line-height: 8rem;
+        }
+
+        .header-content-image {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .header-content-image img {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Consistent mobile styling */
+        .header__content h1 {
+            font-size: 2.5rem !important;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .header__content h4 {
+            text-align: center;
+        }
+
+        .header__content p {
+            text-align: center;
+        }
+
+        .header__content button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Mobile toggle section styling */
+        #mobile-toggle-section {
+            display: block !important;
+        }
+
+        .toggle-content .grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem;
+        }
+
+        .toggle-content .bg-\[\#35373b\] {
+            padding: 1rem !important;
+        }
+
+        .toggle-content .text-center h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .toggle-content .text-center p {
+            font-size: 0.9rem;
+        }
+
+        .toggle-content .text-center i {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Program section mobile fixes */
+        .explore__grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .explore__card {
+            margin-bottom: 1rem;
+            padding: 1.5rem !important;
+        }
+
+        .explore__header {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .explore__header h2 {
+            font-size: 2rem !important;
+            text-align: center;
+        }
+
+        /* Service section mobile fixes */
+        .class__image {
+            min-height: 250px !important;
+        }
+
+        .class__img-1,
+        .class__img-2 {
+            position: relative !important;
+            max-width: 100% !important;
+            margin-bottom: 1rem;
+        }
+
+        .class__content h2 {
+            font-size: 2rem !important;
+            text-align: center;
+        }
+
+        .class__content p {
+            text-align: center;
+        }
+
+        .class__content button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* About section mobile fixes */
+        .grid.md\:grid-cols-2 {
+            grid-template-columns: 1fr !important;
+        }
+
+        .relative .absolute {
+            position: relative !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            margin-top: 1rem;
+        }
+
+        /* Pricing section mobile fixes */
+        .price__grid {
+            grid-template-columns: 1fr !important;
+        }
+
+        .price__card {
+            padding: 1.5rem !important;
+        }
+
+        /* Community section mobile fixes */
+        .grid.md\:grid-cols-3 {
+            grid-template-columns: 1fr !important;
+        }
+
+        /* Review section mobile fixes */
+        .review__content h4 {
+            text-align: center;
+        }
+
+        .review__content p {
+            text-align: center;
+        }
+
+        .review__rating {
+            text-align: center;
+        }
+
+        .review__footer {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .review__member {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Contact section mobile fixes */
+        .grid.md\:grid-cols-2 {
+            grid-template-columns: 1fr !important;
+        }
+
+        .space-y-6 .flex {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+        }
+
+        .space-y-2 .flex {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.25rem;
+        }
+
+        /* Footer mobile fixes */
+        .grid.md\:grid-cols-2.lg\:grid-cols-4 {
+            grid-template-columns: 1fr !important;
+            text-align: center;
+        }
+
+        .footer__socials {
+            justify-content: center;
+        }
+    }
+
+    /* Tablet specific adjustments */
+    @media (min-width: 640px) and (max-width: 768px) {
+        .header__content h1 {
+            font-size: 3rem !important;
+        }
+
+        .toggle-content .grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        .explore__grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        .price__grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        .grid.md\:grid-cols-3 {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+
+    /* Desktop styles */
+    @media (min-width: 769px) {
+        #mobile-toggle-section {
+            display: none !important;
+        }
+    }
